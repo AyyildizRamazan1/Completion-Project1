@@ -1,0 +1,68 @@
+.signin {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.content {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.inputBox {
+    position: relative;
+    width: 100%;
+}
+
+.inputBox i {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    transition: all 0.3s;
+    color: gray;
+}
+.inputBox input:focus + i,
+.inputBox input:not(:placeholder-shown) + i {
+    transform: translateY(-0px);
+    font-size: 14px;
+}
+
+.inputBox input:focus + i,
+.inputBox input:valid + i {
+    transform: translateY(-30px);
+    font-size: 14px;
+}
+
+.inputBox input {
+    width: 100%;
+    padding: 10px;
+    padding-left: 20px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-top: 10px;
+    transition: all 0.3s;
+}
+
+.inputbox {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.kapat-buton{
+    cursor: pointer;
+   
+    width: 20px; /* Kapatma butonunun genişliğini ayarlayın */
+    height: 20px; /* Kapatma butonunun yüksekliğini ayarlayın (isteğe bağlı) */
+    margin-left: 290px; /* Kapatma butonunu sola kaydırın */
+}

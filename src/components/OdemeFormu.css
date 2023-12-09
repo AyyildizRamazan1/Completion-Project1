@@ -1,0 +1,49 @@
+.modal {
+    position: fixed;          /* Sabit pozisyonlu olarak ekranın ortasında olacak */
+    top: 50%;                 /* Ekranın ortasına yatay olarak yerleştir */
+    left: 50%;                /* Ekranın ortasına dikey olarak yerleştir */
+    transform: translate(-50%, -50%);  /* Yerleştirme ayarları */
+    background-color: white;  /* Arka plan rengini beyaz yap */
+    padding: 2rem;            /* İç boşluk ekleyerek formun daha rahat okunmasını sağla */
+    border-radius: 8px;       /* Kenarları yuvarlak yap */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);  /* Gölgelendirme ekleyerek 3D efekt ver */
+    z-index: 1000;            /* Diğer elementlerden önde olmasını sağla */
+    width: 90%;               /* Genişliği ayarla */
+    max-width: 600px;         /* Maksimum genişliği belirle */
+    height: 55%;
+    max-height: 500px;
+  }
+  .clsOdeme{
+    position: absolute;
+    right: 10px;
+    top: -2px;
+    z-index: 10;
+    width: 30px;   /* Butonun genişliği */
+    height: 30px;   /* Butonun yüksekliği */
+    border: none;
+    background-color: rgba(0,0,0,0.3); /* Arka plana hafif bir renk ekleyin */
+    cursor: pointer;
+    font-size: 12px; /* Font boyutunu küçültün */
+    padding: 5px 8px; /* Padding ekleyin */
+    border-radius: 4px; /* Köşeleri yuvarlak yapın */
+  }
+  
+  .overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.6);
+    z-index: 900;
+  }
+  .expiration-date {
+    display: flex;             /* Yan yana düzenlemek için flexbox kullanıyoruz */
+    align-items: center;      /* İçerikleri ortalamak için */
+    gap: 5px;                 /* İçerikler arasında biraz boşluk oluştur */
+  }
+  
+  .expiration-date input {
+    width: 180px;              /* MM ve YY için input genişliğini ayarla */
+    text-align: center;       /* Metni ortala */
+  }

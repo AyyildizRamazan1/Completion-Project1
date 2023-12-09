@@ -1,0 +1,36 @@
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0,0,0,0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .modal-content {
+    overflow: hidden;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    position: relative;
+    max-width: 400px;
+    width: 100%;
+  }
+  
+  .close-button {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    z-index: 10;
+    width: 30px;   /* Butonun genişliği */
+    height: 30px;   /* Butonun yüksekliği */
+    border: none;
+    background-color: rgba(0,0,0,0.3); /* Arka plana hafif bir renk ekleyin */
+    cursor: pointer;
+    font-size: 12px; /* Font boyutunu küçültün */
+    padding: 5px 8px; /* Padding ekleyin */
+    border-radius: 4px; /* Köşeleri yuvarlak yapın */
+  }

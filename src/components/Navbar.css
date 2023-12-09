@@ -1,0 +1,82 @@
+.navbar {
+    display: flex;
+   
+    align-items: center;
+    background-color: #333;
+    padding: 0.5rem 1rem;
+    width: 100%;
+}
+
+.navbar button {
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    padding: 0.4rem 0.8rem;
+    font-size: 0.9rem;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+.navbar button:hover {
+    background-color: #0056b3;
+}
+.btn-ödeme {
+    margin-right: 20px; /* Kayıt Ol butonuyla arasında 20px boşluk bırakır */
+}
+.btn_anasayfa{
+    margin-right: 20px;
+}
+.btn-kayıtol{
+    margin-right: 20px;
+}
+.kullanici-menu {
+    border: none;
+    padding: 8px 12px;
+    margin-left: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    position: relative;
+  }
+  .kullanici-menu-btn {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    color: white; 
+  }
+  .kullanici-menu-dropdown {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    border: 1px solid #ccc;
+    z-index: 1;
+    max-height: 200px; 
+    overflow-y: auto;
+  }
+  
+  .kullanici-menu:hover .kullanici-menu-dropdown {
+    display: block;
+    text-align: left;
+  }
+
+  .demo-dropdown > li {
+    position: relative; /* içerisinde ul position:absolute değerine sahip olduğu için kapsayıcı li relative olmalı */
+    display: inline-block;
+  }
+  .demo-dropdown >  ul li a {
+    
+    color: #333;
+    padding: 10px 15px;
+    left: 0px;
+    text-align: left;
+    text-decoration: none;
+  }
+  
+  .demo-dropdown > li ul li:hover a {
+    background-color: rgba(0, 0, 0, 0.05);
+  }
+  
+  .demo-dropdown > li:hover ul {
+    display: block; /* Açılır menü li'nin üzerine mouse ile gelindiğinde görünür olacaktır. */
+  }
+  

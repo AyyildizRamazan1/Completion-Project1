@@ -1,0 +1,47 @@
+.card {
+    width: 100px;
+    height: 100px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin: 10px;
+    background-color: #84DCC6; /* kartın iç rengini sarı yap */
+    color: white; /* kart içindeki yazı rengini beyaz yap */
+    font-size: 0.9rem; /* yazı boyutunu büyüt */
+  }
+  
+  .cards-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px; /* Grid arasındaki boşluğu azalt */
+    justify-content: center;
+    align-content: center;
+    height: 80vh;
+    place-items: center; /* grid içindeki öğeleri merkeze alır */
+  }
+  
+  .main-content {
+    height: 80vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  body, html {
+    height: 100%;
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    
+  }
+
+
+
+
+
+
+
+
