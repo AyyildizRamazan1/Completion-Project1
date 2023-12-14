@@ -43,18 +43,9 @@
     cursor: pointer;
     color: white; 
   }
-  .kullanici-menu-dropdown {
-    display: none;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    border: 1px solid #ccc;
-    z-index: 1;
-    max-height: 200px; 
-    overflow-y: auto;
-  }
+ 
   
-  .kullanici-menu:hover .kullanici-menu-dropdown {
+  .kullanici-menu:hover  {
     display: block;
     text-align: left;
   }

@@ -26,18 +26,9 @@ const Navbar = ({ onKayitOlClick, onOdemeYapClick, onAnasayfaClick, kullanici })
               <button className="kullanici-menu-btn">
                 {kullanici.isim} {kullanici.soyisim}
               </button>
-              <div className="kullanici-menu-dropdown">
-              <ul class="demo-dropdown">
-        <ul>
-            <li><a href="#">Link</a></li>
-            <li><a href="#">Link</a></li>
-            <li><a href="#">Link</a></li>
-            <li><a href="#">Çıkış Yap</a></li>
-        </ul>
     
-</ul>
               </div>
-            </div>
+            
           )}
         </nav>
       );
