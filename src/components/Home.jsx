@@ -9,6 +9,7 @@ import { collection, query, where, getDocs } from "firebase/firestore";
 import InterCom from "./InterCom";
 import { Link } from "react-router-dom";
 
+
 function App() {
   const [showKayitFormu, setShowKayitFormu] = useState(false);
   const [showOdemeFormu, setShowOdemeFormu] = useState(false);
@@ -138,7 +139,7 @@ function App() {
               {name:"Giriş Yap",href:""},
               {name:"Veri göster",href:""},
               {name:"Satın Al",href:"/satinal"},
-              "Kart 6",
+              {name:"Kart Bilgi Ekle",href:"/kartbilgi"},
               "Kart 7",
               "Kart 8",
               "Kart 9",

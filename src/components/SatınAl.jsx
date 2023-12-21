@@ -5,9 +5,13 @@ import { IoMdInformationCircleOutline } from "react-icons/io";
 import { redirect } from "react-router-dom";
 import Modal from "../modals/modals";
 import { BrowserRouter as Router } from 'react-router-dom';
+;
 
 const SatınAl = () => {
   const [isModalOpen, setModalOpen ]= useState(false);
+  const [selectedKart, setSelectedKart] = useState(null);
+
+
   const openModal= () =>{
     setModalOpen(true);
   }
@@ -15,6 +19,10 @@ const SatınAl = () => {
     setModalOpen(false);
   }
 
+  const handleKartBilgiSubmit = (kartBilgileri) => {
+    setSelectedKart(kartBilgileri);
+    setModalOpen(true);
+  };
 
   const images = [
     {
@@ -56,6 +64,7 @@ const SatınAl = () => {
       </Modal>
       
     </div>
+   
   );
 };
 
