@@ -1,13 +1,13 @@
 import React, { useState } from 'react';
-
+import { useNavigate } from 'react-router-dom';
 const KartBilgi = ({ onKartBilgiSubmit }) => {
   const [resim, setResim] = useState(null);
   const [kartIsmi, setKartIsmi] = useState('');
   const [kartBilgisi, setKartBilgisi] = useState('');
-
+  const navigate = useNavigate();
   const handleResimChange = (e) => {
     const file = e.target.files[0];
-    setResim(file);
+    setResim(file.name);
   };
 
   const handleKartIsmiChange = (e) => {
@@ -20,17 +20,14 @@ const KartBilgi = ({ onKartBilgiSubmit }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    onKartBilgiSubmit({ resim, kartIsmi, kartBilgisi });
+    navigate('/satinal', { state: { src: `/images/${resim}`, alt: kartIsmi, info: kartBilgisi } });
   };
-  const hh2baslık={
-    textAlign:"center",
-  }
-
+ 
   return (
     <div>
       
       <form onSubmit={handleSubmit}>
-      <h2 style={hh2baslık}>Kart Bilgi Ekle</h2>
+      <h2 style={{ textAlign: 'center', margin: '0' }}>Kart Bilgi Ekle</h2>
         <label>
           Resim Seç:
           <input type="file" onChange={handleResimChange} accept="image/*" />
@@ -39,10 +36,16 @@ const KartBilgi = ({ onKartBilgiSubmit }) => {
           Kart İsmi:
           <input type="text" value={kartIsmi} onChange={handleKartIsmiChange} />
         </label>
-        <label>
+        <div style={{marginBottom:'10px'}}>
+        <label style={{display:'block'}}>
           Kart Bilgisi:
-          <textarea value={kartBilgisi} onChange={handleKartBilgisiChange} />
+          <textarea
+           value={kartBilgisi}
+            onChange={handleKartBilgisiChange}
+            style={{width:'100%', minHeight:'150px'}}
+            />
         </label>
+        </div>
         <button type="submit">Gönder</button>
       </form>
     </div>

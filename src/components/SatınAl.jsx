@@ -5,7 +5,8 @@ import { IoMdInformationCircleOutline } from "react-icons/io";
 import { redirect } from "react-router-dom";
 import Modal from "../modals/modals";
 import { BrowserRouter as Router } from 'react-router-dom';
-;
+import KartBilgi from "./KartBilgi";
+import { useLocation } from "react-router-dom";
 
 const SatınAl = () => {
   const [isModalOpen, setModalOpen ]= useState(false);
@@ -24,7 +25,7 @@ const SatınAl = () => {
     setModalOpen(true);
   };
 
-  const images = [
+const images = [
     {
         src: "/images/kart-resim.jpg",
         alt: "esp32 kartı",
@@ -48,9 +49,12 @@ const SatınAl = () => {
       alt: "esp32 kartı",
      
   },
-   
-  ];
+  ]
 
+ const {state}=useLocation()
+
+images.push(state)
+ console.log(state);
   return (
     <div>
       
@@ -59,8 +63,7 @@ const SatınAl = () => {
       <Boxes images={images} openModal= { openModal}/>
       </div>
       <Modal isOpen={isModalOpen} onClose={closeModal}>
-        <h2>Modal İçeriği</h2>
-        <p>Bu bir modal penceresidir</p>
+        {state.info}
       </Modal>
       
     </div>
@@ -107,7 +110,7 @@ const Boxes = ({ images, openModal,isModalOpen,closeModal }) => {
          style={{ width: "100%", maxHeight: "100%", objectFit: "contain" }}
 
          />
-        <p>esp-32 kartı</p>
+        <p>{image.alt}</p>
         <div style={{ width:"100%", display:"flex"}}>
           <button style={buttonStyle}  >
            <span style={buttonTextContainer}>Satın Al</span> 
