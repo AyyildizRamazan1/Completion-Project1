@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Navbar from "./Navbar";
 import { GiBuyCard } from "react-icons/gi";
 import { IoMdInformationCircleOutline } from "react-icons/io";
@@ -7,15 +7,12 @@ import Modal from "../modals/modals";
 import { BrowserRouter as Router } from 'react-router-dom';
 import KartBilgi from "./KartBilgi";
 import { useLocation } from "react-router-dom";
+import useLocalStorage from "../hooks/useLocalStorage";
 
 const SatınAl = () => {
   const [isModalOpen, setModalOpen ]= useState(false);
   const [selectedKart, setSelectedKart] = useState(null);
 
-
-  const openModal= () =>{
-    setModalOpen(true);
-  }
   const closeModal =() =>{
     setModalOpen(false);
   }
@@ -25,45 +22,25 @@ const SatınAl = () => {
     setModalOpen(true);
   };
 
-const images = [
-    {
-        src: "/images/kart-resim.jpg",
-        alt: "esp32 kartı",
-       
-    },
-    {
-      src: "/images/kart-resim1.jpg",
-      alt: "esp32 kartı",
-    },
+const Images = JSON.parse( localStorage.getItem('imgs'))
+console.log(Images);
 
-    {
-      src: "/images/kart-resim1.jpg",
-      alt: "esp32 kartı",
-    },
-    {
-      src: "/images/kart-resim1.jpg",
-      alt: "esp32 kartı",
-    },
-    {
-      src: "/images/kart-resim.jpg",
-      alt: "esp32 kartı",
-     
-  },
-  ]
+const [InfoData, setInfoData] = useState('');
+const openModal= async (e) =>{
+  const inf = await e; 
+  setInfoData(inf)
+  setModalOpen(true);
+}
 
- const {state}=useLocation()
-
-images.push(state)
- console.log(state);
   return (
     <div>
       
       <Navbar/>
       <div className="parent">
-      <Boxes images={images} openModal= { openModal}/>
+      <Boxes images={Images} openModal= { openModal}/>
       </div>
       <Modal isOpen={isModalOpen} onClose={closeModal}>
-        {state.info}
+        {InfoData}
       </Modal>
       
     </div>
@@ -116,7 +93,7 @@ const Boxes = ({ images, openModal,isModalOpen,closeModal }) => {
            <span style={buttonTextContainer}>Satın Al</span> 
            <GiBuyCard />
             </button>
-        <button style={buttonStyle} onClick={() => openModal()}>
+        <button style={buttonStyle} onClick={() => openModal(image.info)}>
          <span style={buttonTextContainer}>Bilgi Al</span> 
          <IoMdInformationCircleOutline size={20}/>
           </button>
@@ -129,7 +106,5 @@ const Boxes = ({ images, openModal,isModalOpen,closeModal }) => {
   });
   return boxes;
 };
-
-
 
 export default SatınAl;

@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import useLocalStorage from '../hooks/useLocalStorage';
 const KartBilgi = ({ onKartBilgiSubmit }) => {
   const [resim, setResim] = useState(null);
   const [kartIsmi, setKartIsmi] = useState('');
@@ -17,10 +18,11 @@ const KartBilgi = ({ onKartBilgiSubmit }) => {
   const handleKartBilgisiChange = (e) => {
     setKartBilgisi(e.target.value);
   };
-
+  let a = useLocalStorage()
   const handleSubmit = (e) => {
     e.preventDefault();
-    navigate('/satinal', { state: { src: `/images/${resim}`, alt: kartIsmi, info: kartBilgisi } });
+    a.writeImage({src: `/images/${resim}`, alt: kartIsmi, info: kartBilgisi })
+    // navigate('/satinal', { state: { src: `/images/${resim}`, alt: kartIsmi, info: kartBilgisi } });
   };
  
   return (
