@@ -1,13 +1,8 @@
 import React, { useState, useEffect } from "react";
-import Navbar from "./Navbar";
 import { GiBuyCard } from "react-icons/gi";
 import { IoMdInformationCircleOutline } from "react-icons/io";
-import { redirect } from "react-router-dom";
 import Modal from "../modals/modals";
-import { BrowserRouter as Router } from 'react-router-dom';
-import KartBilgi from "./KartBilgi";
-import { useLocation } from "react-router-dom";
-import useLocalStorage from "../hooks/useLocalStorage";
+import OdemeNavbar from "./OdemeNavbar";
 
 const SatınAl = () => {
   const [isModalOpen, setModalOpen ]= useState(false);
@@ -35,7 +30,7 @@ const openModal= async (e) =>{
   return (
     <div>
       
-      <Navbar/>
+      <OdemeNavbar/>
       <div className="parent">
       <Boxes images={Images} openModal= { openModal}/>
       </div>

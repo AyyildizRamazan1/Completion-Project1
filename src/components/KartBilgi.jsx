@@ -6,6 +6,7 @@ const KartBilgi = ({ onKartBilgiSubmit }) => {
   const [kartIsmi, setKartIsmi] = useState('');
   const [kartBilgisi, setKartBilgisi] = useState('');
   const navigate = useNavigate();
+
   const handleResimChange = (e) => {
     const file = e.target.files[0];
     setResim(file.name);
@@ -27,7 +28,6 @@ const KartBilgi = ({ onKartBilgiSubmit }) => {
  
   return (
     <div>
-      
       <form onSubmit={handleSubmit}>
       <h2 style={{ textAlign: 'center', margin: '0' }}>Kart Bilgi Ekle</h2>
         <label>
@@ -42,10 +42,7 @@ const KartBilgi = ({ onKartBilgiSubmit }) => {
         <label style={{display:'block'}}>
           Kart Bilgisi:
           <textarea
-           value={kartBilgisi}
-            onChange={handleKartBilgisiChange}
-            style={{width:'100%', minHeight:'150px'}}
-            />
+           value={kartBilgisi}onChange={handleKartBilgisiChange}style={{width:'100%', minHeight:'150px'}}/>
         </label>
         </div>
         <button type="submit">Gönder</button>

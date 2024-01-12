@@ -1,0 +1,46 @@
+/* Navbar.css */
+
+nav {
+
+    background-color: white;
+    /* Arka plan rengi beyaz olarak güncellendi */
+    padding: 10px;
+    position: fixed;
+    top: 0;
+    width: 100%;
+
+}
+
+ul {
+    list-style: none;
+    /* Madde işaretlerini kaldır */
+    margin: 0;
+    /* Kenar boşluklarını sıfırla */
+    padding: 0;
+    /* Dolgu boşluklarını sıfırla */
+    display: flex;
+    /* Elemanları yatay düzende sırala */
+    justify-content: space-around;
+    /* Elemanları eşit aralıklarla sırala */
+}
+
+li {
+    display: inline;
+    /* Elemanları yatayda sırala */
+}
+
+Link {
+    text-decoration: none;
+    /* Altçizgileri kaldır */
+    color: white;
+    /* Metin rengi */
+    font-size: 18px;
+    /* Yazı fontu büyüklüğü */
+    font-weight: bold;
+    /* Yazı fontu kalınlığı */
+}
+
+Link:hover {
+    color: #ff4500;
+    /* Fare üzerine gelindiğinde renk değiştirme */
+}

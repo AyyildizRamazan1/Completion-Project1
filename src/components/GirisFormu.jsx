@@ -10,7 +10,20 @@ function GirisFormu({ onGiris, onGirisYapClick}) {
         e.preventDefault();
         onGiris(telefon, tcKimlik);
     }
-
+//     //APİ bağlama alanı ********************************
+//     const handleSubmit = (e) => {
+//         e.preventDefault();
+//         fetch('http://localhost:5000/api/login', {
+//             method: 'POST',
+//             headers: {
+//                 'Content-Type': 'application/json'
+//             },
+//             body: JSON.stringify({email: telefon, password: tcKimlik})
+//         })
+//         .then(res => res.json())
+//         .then(res => console.log(res))
+//     }
+// //************************************************* Api Bitiş Alanı
     
     return (
         

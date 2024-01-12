@@ -1,5 +1,4 @@
 import React from "react";
-
 const Modal=({isOpen, onClose, children}) =>{
     if(!isOpen) return null;
 
@@ -7,7 +6,9 @@ const Modal=({isOpen, onClose, children}) =>{
         <div className="modal-overlay">
             <div className="modal">
                 {children}
-                <button className="modal-close" style={{position: 'absolute', width: '3rem', height: '3rem', right: '10px', top: '5px'}} onClick={onClose}>X</button>
+                <button className="modal-close" 
+                style={{position: 'absolute', width: '1.5rem', height: '1.5rem', right: '4px', top: '3px'}} 
+                onClick={onClose}>X</button>
             </div>
         </div>
     );
